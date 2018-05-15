@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW_Module_11_hostel", "HW_Module_11_hostel\HW_Module_11_hostel.csproj", "{776ABEC6-0D96-49B2-96A9-80F039B9C72A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Info", "Info\Info.csproj", "{F7618E97-52EF-4104-BC4F-603BC570E777}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{776ABEC6-0D96-49B2-96A9-80F039B9C72A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{776ABEC6-0D96-49B2-96A9-80F039B9C72A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{776ABEC6-0D96-49B2-96A9-80F039B9C72A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{776ABEC6-0D96-49B2-96A9-80F039B9C72A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7618E97-52EF-4104-BC4F-603BC570E777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7618E97-52EF-4104-BC4F-603BC570E777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7618E97-52EF-4104-BC4F-603BC570E777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7618E97-52EF-4104-BC4F-603BC570E777}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49CFD54F-021D-4DA5-AB7C-EECB95A87909}
+	EndGlobalSection
+EndGlobal
