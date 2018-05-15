@@ -18,7 +18,6 @@ namespace HW_Module_11_hostel
         Generator gen = new Generator();
         protected double MinSalary = 15000;
 
-
         public List<Student> students;
 
         public ServiceGenerator()
@@ -71,12 +70,26 @@ namespace HW_Module_11_hostel
                 }
             }
 
+            Console.WriteLine();
+            Console.WriteLine("==============================================================================================================");
+            Console.WriteLine();
+
+            students = students.OrderBy(o => o.AverageScore).ToList();
+
             foreach (Student item in students)
             {
                 students = students.OrderBy(o => o.AverageScore).ToList();
 
-                if(students.Count() < 12)
-
+                if (students.Count() < 12)
+                {
+                    if (item.AverageScore == item.AverageScore)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"затем место в общежитии предоставят {item.FioOfStudent} в порядке уменьшения среднего балла");
+                        students.Add(item);
+                        Console.WriteLine();
+                    }
+                }
             }
         }
     }
