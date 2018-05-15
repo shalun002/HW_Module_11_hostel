@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace Info.Module
 {
+    public enum Sex { мужской, женский }
+
     public struct Student
     {
         private string _FioOfStudent;
@@ -16,7 +18,7 @@ namespace Info.Module
         public double Group { get; set; }
         public double AverageScore { get; set; }
         public int IncomePerFamilyMember { get; set; }
-        public string Sex { get; set; }
+        public Sex sex { get; set; }
         public string FormOfTraining { get; set; }
     }
 }

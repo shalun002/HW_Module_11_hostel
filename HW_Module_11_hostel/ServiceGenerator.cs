@@ -9,8 +9,7 @@ using Info.Module;
 
 namespace HW_Module_11_hostel
 {
-    public enum Sex { man, women }
-    public enum FormOfTraining { daytime_education, evening_form_of_training, full_time_education, extramural_studies }
+    public enum FormOfTraining { дневная, вечерняя, очная, заочна }
 
     public class ServiceGenerator
     {
@@ -31,13 +30,14 @@ namespace HW_Module_11_hostel
             {
                 Student student = new Student();
 
-                if (student.Sex == (Sex.man).ToString())
+                if (student.sex == Sex.мужской)
                 {
                     student.FioOfStudent = gen.GenerateDefault(Gender.man);
                 }
                 else
                     student.FioOfStudent = gen.GenerateDefault(Gender.woman);
 
+                student.sex = (Sex)rand.Next(0, 1);
                 student.Group = (double)rand.Next(10, 100);
                 student.AverageScore = (double)rand.Next(0, 12);
                 student.IncomePerFamilyMember = rand.Next(15000, 50000);
@@ -52,20 +52,24 @@ namespace HW_Module_11_hostel
             foreach (Student item in students)
             {
                 Console.WriteLine();
-                Console.WriteLine($"Ф.И.О - {item.FioOfStudent}, группа - {item.Group}, средний балл - {item.AverageScore}, пол - {item.Sex}, форма обучения - {item.FormOfTraining}");
+                Console.WriteLine($"Ф.И.О - {item.FioOfStudent}, группа - {item.Group}, средний балл - {item.AverageScore}, пол - {item.sex}, форма обучения - {item.FormOfTraining}");
                 Console.WriteLine();
             }
+            Console.WriteLine();
+            Console.WriteLine("==============================================================================================================");
         }
 
         public void CheckToHostel(List<Student> students)
         {
-            students = students.OrderBy(o => o.IncomePerFamilyMember).ToList();
-
             foreach (Student item in students)
             {
+                students = students.OrderBy(o => o.IncomePerFamilyMember).ToList();
+
                 if (item.IncomePerFamilyMember < (MinSalary * 2))
-                {
-                    Console.WriteLine($"В первую очередь место в общежитии предоставят - {item.FioOfStudent}");
+                {                    
+                    Console.WriteLine();
+                    Console.WriteLine($"В первую очередь место в общежитии предоставят - {item.FioOfStudent}, " +
+                                      $"так как доход на члена семьи меньше двух минимальных зарплат и составляет {item.IncomePerFamilyMember}");
                     students.Add(item);
                 }
             }
@@ -74,23 +78,25 @@ namespace HW_Module_11_hostel
             Console.WriteLine("==============================================================================================================");
             Console.WriteLine();
 
-            students = students.OrderBy(o => o.AverageScore).ToList();
+            
 
             foreach (Student item in students)
             {
                 students = students.OrderBy(o => o.AverageScore).ToList();
 
-                if (students.Count() < 12)
+                if (students.Count() < 20)
                 {
                     if (item.AverageScore == item.AverageScore)
                     {
                         Console.WriteLine();
-                        Console.WriteLine($"затем место в общежитии предоставят {item.FioOfStudent} в порядке уменьшения среднего балла");
-                        students.Add(item);
-                        Console.WriteLine();
+                        Console.WriteLine($"Затем место в общежитии предоставят {item.FioOfStudent} в порядке уменьшения среднего балла, который составляет {item.AverageScore}");                   
                     }
+                    students.Add(item);
                 }
             }
+            Console.WriteLine();
+            Console.WriteLine("==============================================================================================================");
+            Console.WriteLine();
         }
     }
 }
